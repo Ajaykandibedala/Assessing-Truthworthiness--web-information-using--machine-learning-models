@@ -1,0 +1,34 @@
+{%extends 'users/userbase.html'%}
+{%block contents%}
+
+
+        <div class="section-header">
+            <h2 class="section-title wow fadeInDown">Assessing Trustworthiness of Web Information Using Machine Learning Models</h2>
+            <p class="wow fadeInDown">The classifiers are being trained and tested on two different datasets: Fake News Detection (Jruvika/FND) and Real or Fake News that contains full news articles in the form of headline and body. Experiments and result analysis verify that the highest accuracy attained by the projected method is 96.61% on the Fake News Detection dataset using the SVM classifier. The work is also compared with other contemporary techniques.</p>
+        </div>
+
+        <div class="row">
+            <div class="features">
+                <div class="col-md-8 col-sm-8 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                    <div class="media service-box">
+                        <div class="pull-left">
+                            <i class="fa fa-futbol-o"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Real of Fake Dataset Results</h4>
+                          {%for i in data %}
+                            Model : {{i.clssifier}}<br/>
+                            Accuracy:  {{i.acc}}<br/>
+                            Report : {{i.cl_report|safe}}
+                          {%endfor%}
+                        </div>
+                    </div>
+                </div><!--/.col-md-4-->
+
+
+            </div>
+        </div><!--/.row-->
+
+
+
+{%endblock%}
